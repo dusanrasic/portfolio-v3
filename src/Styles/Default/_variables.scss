@@ -1,11 +1,26 @@
-$main-menu-height: 50px;
-$side-menu-width: 100px;
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+
+@font-face {
+	font-family: 'CODE Light';
+	src: url('../../Assets/Fonts/CODE\ Light.otf');
+}
+
+@font-face {
+	font-family: 'CODE Bold';
+	src: url('../../Assets/Fonts/CODE\ Bold.otf');
+}
+
+$main-menu-width: 150px;
+
+$font-Roboto: 'Roboto';
+$font-Code-light: 'CODE Light';
+$font-Code-bold: 'CODE Bold';
 
 $font-size-smaller: 10px;
 $font-size-small: 12px;
 $font-size-normal: 14px;
-$font-size-big: 16px;
-$font-size-bigger: 18px;
+$font-size-big: 18px;
+$font-size-bigger: 24px;
 
 $font-weight-regular: 400;
 $font-weight-thin: 100;

@@ -1,0 +1,50 @@
+@import '../../../Styles/Default/variables';
+
+.sv-NotFound {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	&-code {
+		width: auto;
+		height: auto;
+
+		>span {
+			font-family: $font-Code-light;
+			color: $pink;
+			font-size: 172px;
+		}
+	}
+
+	&-description {
+		width: auto;
+		height: auto;
+
+		>span {
+			font-family: $font-Code-bold;
+			// color: $pink;
+			font-size: 32px;
+		}
+	}
+
+	&-action {
+		width: auto;
+		height: auto;
+		margin-top: 40px;
+		position: relative;
+		text-decoration: none;
+
+		>span {
+			color: $pink;
+			font-size: 32px;
+
+			&:hover {
+				color: $white;
+			}
+		}
+	}
+}
