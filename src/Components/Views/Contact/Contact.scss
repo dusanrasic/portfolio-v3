@@ -4,4 +4,52 @@
 	width: 100vw;
 	height: 100vh;
 	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		min-width: 70vw;
+		width: 70vw;
+		min-height: 80vh;
+		height: 80vh;
+		position: relative;
+		box-shadow: 0 0 0 100vh rgba($color: #000000, $alpha: 0.3);
+
+		&-left {
+			display: flex;
+			width: calc(100vw / 2 - 15vw - 5vw);
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			padding: 20px;
+
+			>h1 {
+				font-size: $font-size-bigger;
+				color: $pink;
+				font-weight: $font-weight-bold;
+				margin: 0 0 20px;
+			}
+
+			>p {
+				display: inline-flex;
+				font-size: $font-size-big;
+				text-align: center;
+				color: $light-gray;
+			}
+		}
+
+		&-right {
+			width: calc(100vw / 2 - 15vw + 5vw);
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
 }

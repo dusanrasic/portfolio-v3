@@ -1,7 +1,97 @@
-@import '../../../Styles/Default/variables';
+@import "../../../Styles/Default/variables";
 
 .sv-About {
-	width: 100vw;
-	height: 100vh;
-	position: relative;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    min-width: 70vw;
+    width: 70vw;
+    min-height: 80vh;
+    height: 80vh;
+    position: relative;
+    box-shadow: 0 0 0 100vh rgba($color: #000000, $alpha: 0.3);
+
+    &-left {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: calc(100vw / 2 - 15vw - 5vw);
+      height: 100%;
+      overflow-y: auto;
+
+      &-social {
+        width: 100%;
+
+        &-holder {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+
+          &-item {
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            opacity: 0.5;
+
+            &:hover {
+              opacity: 0.8;
+            }
+
+            >a {
+              width: 100%;
+              height: 100%;
+
+              >img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      &-attribution {
+        position: absolute;
+        bottom: 10px;
+        font-size: $font-size-smaller;
+
+        >a {
+          font-size: $font-size-smaller;
+          text-decoration: none;
+
+          &:hover {
+            color: $white;
+            text-decoration: underline;
+            text-decoration-color: $pink;
+          }
+        }
+      }
+    }
+
+    &-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      width: calc(100vw / 2 - 15vw + 5vw);
+      height: 100%;
+      padding: 20px;
+
+      >p {
+        font-size: $font-size-bigger;
+        color: $dark-gray;
+      }
+    }
+  }
 }

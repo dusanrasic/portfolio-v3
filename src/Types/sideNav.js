@@ -1,8 +1,15 @@
+export const SIDE_NAV_LINKS = {
+  home: 'home',
+  projects: 'projects',
+  contact: 'contact',
+  about: 'about',
+};
+
 export const SIDE_NAV_TYPE = {
-  home: '01',
-  projects: '02',
-  contact: '03',
-  about: '04',
+  [SIDE_NAV_LINKS.home]: '01',
+  [SIDE_NAV_LINKS.projects]: '02',
+  [SIDE_NAV_LINKS.contact]: '03',
+  [SIDE_NAV_LINKS.about]: '04',
 };
 
 export const SIDE_NAV_LABEL = {

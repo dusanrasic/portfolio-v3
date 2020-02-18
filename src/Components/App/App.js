@@ -19,7 +19,7 @@ function App() {
         <MainMenu />
         <Switch>
           <Route path="/" component={Homepage} exact />
-          <Route path="/home" component={Homepage} exact />
+          {/* <Route path="/home" component={Homepage} exact /> */}
           <Route path="/about" component={About} exact />
           <Route path="/projects" component={Projects} exact />
           <Route path="/contact" component={Contact} exact />

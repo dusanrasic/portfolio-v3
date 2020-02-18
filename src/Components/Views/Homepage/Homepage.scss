@@ -4,4 +4,106 @@
 	width: 100vw;
 	height: 100vh;
 	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		min-width: 70vw;
+		width: 70vw;
+		min-height: 80vh;
+		height: 80vh;
+		position: relative;
+		// box-shadow: 0 0 0 100vh rgba($color: #000000, $alpha: 0.3);
+
+		&-left {
+			display: flex;
+			width: calc(100vw / 2 - 15vw - 5vw);
+			height: 100%;
+			justify-content: flex-end;
+			align-items: center;
+			position: relative;
+
+			&-image {
+				height: 100%;
+				position: absolute;
+				right: 0;
+				animation: leftSideAnimation 2s linear;
+			}
+		}
+
+		&-right {
+			width: calc(100vw / 2 - 15vw + 5vw);
+			height: 100%;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			position: relative;
+
+			&-image {
+				height: 100%;
+				position: absolute;
+				left: 0;
+				animation: rightSideAnimation 2s linear;
+			}
+		}
+	}
+}
+
+@keyframes leftSideAnimation {
+	0% {
+		right: 100px;
+		opacity: 0;
+	}
+
+	25% {
+		right: 75px;
+		opacity: 0.25;
+	}
+
+	50% {
+		right: 50px;
+		opacity: 0.5;
+	}
+
+	75% {
+		right: 25px;
+		opacity: 0.75;
+	}
+
+	100% {
+		right: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes rightSideAnimation {
+	0% {
+		left: 100px;
+		opacity: 0;
+	}
+
+	25% {
+		left: 75px;
+		opacity: 0.25;
+	}
+
+	50% {
+		left: 50px;
+		opacity: 0.5;
+	}
+
+	75% {
+		left: 25px;
+		opacity: 0.75;
+	}
+
+	100% {
+		left: 0;
+		opacity: 1;
+	}
 }

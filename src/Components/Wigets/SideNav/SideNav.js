@@ -1,21 +1,26 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import { SIDE_NAV_TYPE, SIDE_NAV_LABEL } from '../../../Types/sideNav';
 
 import './SideNav.scss';
 
 const CLASS = 'sv-SideNav';
-export default class SideNav extends Component {
-  renderMenu = () =>
-    Object.keys(SIDE_NAV_TYPE).map(key => this.renderMenuItem(key));
+const SideNav = () => {
+  const loc = useLocation();
 
-  renderMenuItem = item => {
+  const renderMenuItem = item => {
     const index = SIDE_NAV_TYPE[item];
     const name = SIDE_NAV_LABEL[index];
 
+    const route = item === `home` ? `` : item;
+    const active = `/${route}` === `${loc.pathname}` ? 'activeLink' : '';
     return (
-      <NavLink className={`${CLASS}-item`} key={index} to={`/${item}`}>
+      <NavLink
+        className={`${CLASS}-item ${active}`}
+        key={index}
+        to={`/${route}`}
+      >
         <span className={`${CLASS}-item-indicator`} />
         <span className={`${CLASS}-item-index`}>{index}</span>
         <span className={`${CLASS}-item-name`}>{name}</span>
@@ -23,7 +28,9 @@ export default class SideNav extends Component {
     );
   };
 
-  render() {
-    return <div className={CLASS}>{this.renderMenu()}</div>;
-  }
-}
+  const renderMenu = () =>
+    Object.keys(SIDE_NAV_TYPE).map(key => renderMenuItem(key));
+
+  return <div className={CLASS}>{renderMenu()}</div>;
+};
+export default SideNav;

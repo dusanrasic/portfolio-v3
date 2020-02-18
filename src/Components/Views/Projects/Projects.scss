@@ -1,7 +1,209 @@
-@import '../../../Styles/Default/variables';
+@import "../../../Styles/Default/variables";
 
 .sv-Projects {
-	width: 100vw;
-	height: 100vh;
-	position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+    min-width: 70vw;
+    width: 70vw;
+    min-height: 80vh;
+    height: 80vh;
+    box-shadow: 0 0 0 100vh rgba($color: #000000, $alpha: 0.3);
+
+    &-left {
+      width: calc(100vw / 2 - 15vw - 5vw);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      &-holder {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        overflow-x: auto;
+        height: auto;
+
+        &-item {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          min-height: 50px;
+          min-width: 100px;
+
+          &-button {
+            width: auto;
+            font-size: $font-size-big;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            text-align: left;
+            color: $light-gray;
+
+            &:hover {
+              cursor: pointer;
+              color: $white;
+              border-bottom: 1px solid $pink;
+            }
+
+            &:active {
+              outline: none;
+            }
+
+            &-active {
+              width: auto;
+              font-size: $font-size-big;
+              background-color: transparent;
+              border: none;
+              outline: none;
+              color: $white;
+              border-bottom: 1px solid $pink;
+              text-align: left;
+
+              &:hover {
+                cursor: pointer;
+              }
+
+              &:active {
+                outline: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-right {
+      width: calc(100vw / 2 - 15vw + 5vw);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      >span {
+        font-size: $font-size-big;
+        color: $pink;
+        font-weight: $font-weight-bold;
+      }
+
+      &-holder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow-x: auto;
+        height: auto;
+
+        &-switch {
+          width: auto;
+
+          &-technology {
+            width: auto;
+            margin: 0 10px;
+            font-size: $font-size-big;
+            outline: none;
+            min-width: 250px;
+            color: $dark-gray;
+
+            &:hover {
+              cursor: pointer;
+              border-bottom: 1px solid $pink;
+              color: $white;
+            }
+
+            &-active {
+              width: auto;
+              margin: 0 10px;
+              font-size: $font-size-big;
+              outline: none;
+              opacity: 1;
+              color: $white;
+              border-bottom: 1px solid $pink;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+        &-item {
+          &-details {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            min-height: 100px;
+            min-width: 250px;
+
+            &-name {
+              width: 100%;
+              font-size: $font-size-big;
+              margin: 10px 0;
+              color: $pink;
+              font-weight: $font-weight-bold;
+
+              >span {
+                font-size: $font-size-big;
+                color: $dark-gray;
+              }
+            }
+
+            &-path {
+              width: 100%;
+              font-size: $font-size-big;
+              margin: 10px 0;
+              color: $pink;
+              font-weight: $font-weight-bold;
+
+              >a {
+                font-size: $font-size-big;
+                text-decoration: none;
+                color: $dark-gray;
+
+                &:hover {
+                  text-decoration: underline;
+                  color: $white;
+                  text-decoration-color: $pink;
+                }
+              }
+            }
+          }
+
+          &-technology {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            min-height: 100px;
+            min-width: 250px;
+
+            &-name {
+              width: 100%;
+              font-size: $font-size-big;
+              margin: 10px 0;
+              color: $pink;
+
+              >span {
+                font-size: $font-size-big;
+                color: $dark-gray;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

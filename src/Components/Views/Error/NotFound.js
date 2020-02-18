@@ -15,7 +15,7 @@ export default class NotFound extends Component {
         <div className={`${CLASS}-description`}>
           <span>Page not found</span>
         </div>
-        <NavLink className={`${CLASS}-action`} to="/home">
+        <NavLink className={`${CLASS}-action`} to="/">
           <span>go back</span>
         </NavLink>
       </div>
