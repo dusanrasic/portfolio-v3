@@ -101,6 +101,9 @@ export default class Projects extends Component {
           <div className={`${CLASS}-wrapper-right`}>
             {activeProject ? (
               <div className={`${CLASS}-wrapper-right-holder`}>
+                <div className={`${CLASS}-wrapper-right-holder-logo`}>
+                  <img src={activeProject.image} alt={activeProject.label} />
+                </div>
                 <div className={`${CLASS}-wrapper-right-holder-switch`}>
                   <span
                     className={activeDetailsClass}

@@ -1,3 +1,10 @@
+import segment from '../Images/7segment.png';
+import alps from '../Images/alps.png';
+import diamonds from '../Images/diamonds.png';
+import homp from '../Images/homp.png';
+import directresponse from '../Images/directresponse.png';
+import todo from '../Images/todo.png';
+
 export const PROJECT_NAV = {
   todo: 'todo',
   seven_segment: 'seven_segment',
@@ -16,6 +23,7 @@ export const PROJECT_NAV_TYPE = {
     label: 'To Do',
     url: 'todo.dusanrasic.rs',
     url_path: 'https://todo.dusanrasic.rs',
+    image: todo,
     technology: {
       react: 'react',
       redux: 'redux',
@@ -27,6 +35,7 @@ export const PROJECT_NAV_TYPE = {
     label: '7 Segment Display Clock',
     url: '7segmentclock.dusanrasic.rs',
     url_path: 'https://7segmentclock.dusanrasic.rs',
+    image: segment,
     technology: {
       js: 'js',
       p5js: 'p5js',
@@ -38,6 +47,7 @@ export const PROJECT_NAV_TYPE = {
     label: 'Portfolio v2',
     url: 'portfoliov2.dusanrasic.rs',
     url_path: 'https://portfoliov2.dusanrasic.rs',
+    image: directresponse,
     technology: {
       html: 'html',
       js: 'js',
@@ -50,12 +60,20 @@ export const PROJECT_NAV_TYPE = {
     label: 'Direct Response Web',
     url: 'directresponse.dusanrasic.rs',
     url_path: 'https://directresponse.dusanrasic.rs',
+    image: directresponse,
+    technology: {
+      html: 'html',
+      js: 'js',
+      php: 'php',
+      sass: 'sass',
+    },
   },
   [PROJECT_NAV.direct_response]: {
     type: '05',
     label: 'Direct Response .NET',
     url: '',
     url_path: 'https://',
+    image: directresponse,
     technology: {
       c_sharp: 'C#',
       wpf: 'WPF',
@@ -68,6 +86,7 @@ export const PROJECT_NAV_TYPE = {
     label: 'Portfolio v3',
     url: 'dr.dusanrasic.rs',
     url_path: 'https://dr.dusanrasic.rs',
+    image: directresponse,
     technology: {
       html: 'html',
       js: 'js',
@@ -80,6 +99,7 @@ export const PROJECT_NAV_TYPE = {
     label: 'Diamonds',
     url: 'diamonds.dusanrasic.rs',
     url_path: 'https://diamonds.dusanrasic.rs',
+    image: diamonds,
     technology: {
       html: 'html',
       js: 'js',
@@ -92,6 +112,7 @@ export const PROJECT_NAV_TYPE = {
     label: 'The Alps',
     url: 'thealps.dusanrasic.rs',
     url_path: 'https://thealps.dusanrasic.rs',
+    image: alps,
     technology: {
       html: 'html',
       js: 'js',
@@ -103,6 +124,7 @@ export const PROJECT_NAV_TYPE = {
     label: 'HOMP',
     url: 'homp.dusanrasic.rs',
     url_path: 'https://homp.dusanrasic.rs',
+    image: homp,
     technology: {
       html: 'html',
       js: 'js',

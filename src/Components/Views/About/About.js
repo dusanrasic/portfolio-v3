@@ -45,13 +45,11 @@ export default class About extends Component {
           </div>
           <div className={`${CLASS}-wrapper-right`}>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Hi! My name is Dusan and I'm 25 years old. I was born in
+              Smederevska Palanka but currently I'm living in Belgrade. I
+              graduated on ICT College with degree of an electrical and computer
+              engineer. I like to develop for web. If you wanna know more about
+              me check my social accounts.
             </p>
           </div>
         </div>

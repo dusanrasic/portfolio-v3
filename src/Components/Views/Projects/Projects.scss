@@ -106,6 +106,18 @@
         overflow-x: auto;
         height: auto;
 
+        &-logo {
+          max-width: 200px;
+          width: 170px;
+          height: 130px;
+          margin: 30px;
+
+          >img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+
         &-switch {
           width: auto;
 

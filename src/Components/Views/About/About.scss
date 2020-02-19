@@ -43,9 +43,12 @@
             height: 60px;
             margin: 10px;
             opacity: 0.5;
+            transform: scale(0.95);
+            transition: all .3s ease-in-out;
 
             &:hover {
               opacity: 0.8;
+              transform: scale(1);
             }
 
             >a {
