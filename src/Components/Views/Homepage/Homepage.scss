@@ -31,8 +31,8 @@
 			&-image {
 				height: 100%;
 				position: absolute;
-				right: 0;
-				animation: leftSideAnimation 2s linear;
+				top: 0;
+				animation: leftSideAnimation .5s linear;
 			}
 		}
 
@@ -47,8 +47,8 @@
 			&-image {
 				height: 100%;
 				position: absolute;
-				left: 0;
-				animation: rightSideAnimation 2s linear;
+				bottom: 0;
+				animation: rightSideAnimation .5s linear;
 			}
 		}
 	}
@@ -56,54 +56,54 @@
 
 @keyframes leftSideAnimation {
 	0% {
-		// right: 100px;
+		top: 100px;
 		opacity: 0;
 	}
 
 	25% {
-		// right: 75px;
+		top: 75px;
 		opacity: 0.25;
 	}
 
 	50% {
-		// right: 50px;
+		top: 50px;
 		opacity: 0.5;
 	}
 
 	75% {
-		// right: 25px;
+		top: 25px;
 		opacity: 0.75;
 	}
 
 	100% {
-		// right: 0;
+		top: 0;
 		opacity: 1;
 	}
 }
 
 @keyframes rightSideAnimation {
 	0% {
-		// left: 100px;
+		bottom: 100px;
 		opacity: 0;
 	}
 
 	25% {
-		// left: 75px;
+		bottom: 75px;
 		opacity: 0.25;
 	}
 
 	50% {
-		// left: 50px;
+		bottom: 50px;
 		opacity: 0.5;
 	}
 
 	75% {
-		// left: 25px;
+		bottom: 25px;
 		opacity: 0.75;
 	}
 
 	100% {
-		// left: 0;
+		bottom: 0;
 		opacity: 1;
 	}
 }

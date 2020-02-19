@@ -132,7 +132,7 @@
             &:hover {
               cursor: pointer;
               border-bottom: 1px solid $pink;
-              color: $white;
+              // color: #96BDC6;
             }
 
             &-active {
@@ -141,7 +141,7 @@
               font-size: $font-size-big;
               outline: none;
               opacity: 1;
-              color: $white;
+              color: $dark-gray;
               border-bottom: 1px solid $pink;
 
               &:hover {
