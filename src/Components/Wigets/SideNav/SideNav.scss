@@ -24,7 +24,7 @@
 		transition: all 1s ease-in-out;
 		text-decoration: none;
 
-		>span {
+		>p {
 			font-size: $font-size-bigger;
 			font-weight: $font-weight-regular;
 			opacity: 0.7;
@@ -33,6 +33,10 @@
 		&-index {
 			margin-left: 10px;
 			transition: all .3s ease-in-out;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
 		}
 
 		&-name {
@@ -44,7 +48,7 @@
 		&-indicator {
 			width: 2px;
 			height: 2px;
-			background-color: $pink;
+			background-color: $bright-navy-blue;
 			margin: 0;
 			transition: all .3s ease-in-out;
 		}
@@ -52,7 +56,7 @@
 		&:hover {
 			cursor: pointer;
 
-			>span {
+			>p {
 				opacity: 1
 			}
 
@@ -71,7 +75,7 @@
 	}
 
 	.activeLink {
-		>span {
+		>p {
 			opacity: 1
 		}
 
@@ -80,7 +84,10 @@
 		}
 
 		.sv-SideNav-item-name {
-			display: block;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
 		}
 
 		.sv-SideNav-item-indicator {

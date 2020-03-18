@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 import './Contact.scss';
 import Form from '../../Wigets/Form/Form';
@@ -6,9 +7,46 @@ import Form from '../../Wigets/Form/Form';
 const CLASS = 'sv-Contact';
 
 export default class Contact extends Component {
+  static propTypes = {
+    location: PropTypes.object,
+  };
+
+  static defaultProps = {
+    location: {},
+  };
+
+  constructor(props) {
+    super(props);
+    console.log(props, '>>>>const');
+
+    this.state = {
+      activeClass: '',
+    };
+  }
+
+  componentDidMount() {
+    const { location } = this.props;
+    if (location.pathname === '/contact') {
+      requestAnimationFrame(() => {
+        this.setState({
+          activeClass: 'sv-Contact-Active',
+        });
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    requestAnimationFrame(() => {
+      this.setState({
+        activeClass: CLASS,
+      });
+    });
+  }
+
   render() {
+    const { activeClass } = this.state;
     return (
-      <div className={CLASS}>
+      <div className={activeClass}>
         <div className={`${CLASS}-wrapper`}>
           <div className={`${CLASS}-wrapper-left`}>
             <h1>Get In Touch</h1>

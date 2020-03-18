@@ -22,8 +22,8 @@ const SideNav = () => {
         to={`/${route}`}
       >
         <span className={`${CLASS}-item-indicator`} />
-        <span className={`${CLASS}-item-index`}>{index}</span>
-        <span className={`${CLASS}-item-name`}>{name}</span>
+        <p className={`${CLASS}-item-index`}>{index}</p>
+        <p className={`${CLASS}-item-name`}>{name}</p>
       </NavLink>
     );
   };

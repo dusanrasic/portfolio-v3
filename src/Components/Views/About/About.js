@@ -1,17 +1,53 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
+import { PropTypes } from 'prop-types';
 import { SOCIAL_NAV, SOCIAL_NAV_TYPE } from '../../../Types/social';
 
 import './About.scss';
 
 const CLASS = 'sv-About';
 
-export default class About extends Component {
+class About extends Component {
+  static propTypes = {
+    location: PropTypes.object,
+  };
+
+  static defaultProps = {
+    location: {},
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      activeClass: '',
+    };
+  }
+
+  componentDidMount() {
+    const { location } = this.props;
+    if (location.pathname === '/about') {
+      requestAnimationFrame(() => {
+        this.setState({
+          activeClass: 'sv-About-Active',
+        });
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    requestAnimationFrame(() => {
+      this.setState({
+        activeClass: CLASS,
+      });
+    });
+  }
+
   renderSocialItem = () =>
     Object.keys(SOCIAL_NAV).map(key => {
       const item = SOCIAL_NAV_TYPE[key];
       const url =
         item.label === 'Mail' ? `mailto:${item.url_path}` : item.url_path;
-      console.log(item.label, '>>>>nav');
       return (
         <div className={`${CLASS}-wrapper-left-social-holder-item`} key={key}>
           <a href={url} target="_blank" rel="noopener noreferrer">
@@ -22,8 +58,9 @@ export default class About extends Component {
     });
 
   render() {
+    const { activeClass } = this.state;
     return (
-      <div className={CLASS}>
+      <div className={activeClass}>
         <div className={`${CLASS}-wrapper`}>
           <div className={`${CLASS}-wrapper-left`}>
             <div className={`${CLASS}-wrapper-left-social-holder`}>
@@ -57,3 +94,4 @@ export default class About extends Component {
     );
   }
 }
+export default About;

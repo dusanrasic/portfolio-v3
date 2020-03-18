@@ -15,7 +15,7 @@
 		align-items: flex-start;
 		flex-direction: column;
 		font-size: $font-size-big;
-		color: $dark-gray;
+		color: $maastricht-blue;
 
 		>input[type=text] {
 			background: transparent;
@@ -23,10 +23,10 @@
 			height: 30px;
 			font-size: $font-size-big;
 			border: none;
-			border-bottom: 1px solid $dark-gray;
+			border-bottom: 1px solid $maastricht-blue;
 			transition: all .3s ease-in-out;
 			margin: 5px 0;
-			color: $dark-gray;
+			color: $maastricht-blue;
 
 			&::placeholder {
 				color: #96BDC6;
@@ -34,14 +34,14 @@
 
 			&:focus {
 				outline: none;
-				border-color: $pink;
+				border-color: $bright-navy-blue;
 			}
 		}
 
 		&-area {
 			background-color: transparent;
 			border: none;
-			border-bottom: 1px solid $dark-gray;
+			border-bottom: 1px solid $maastricht-blue;
 			width: 100%;
 			height: auto;
 			max-width: 350px;
@@ -49,14 +49,14 @@
 			max-height: 200px;
 			margin: 5px 0;
 			transition: all .3s ease-in-out;
-			color: $dark-gray;
+			color: $maastricht-blue;
 
 			&::placeholder {
 				color: #96BDC6;
 			}
 
 			&:focus {
-				border-bottom: 1px solid $pink;
+				border-bottom: 1px solid $bright-navy-blue;
 				outline: none;
 			}
 		}

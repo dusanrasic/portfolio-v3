@@ -1,33 +1,50 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
-import Homepage from '../Views/Homepage/Homepage';
 import MainMenu from '../Wigets/MainMenu/MainMenu';
+import Main from '../Wigets/Main/Main';
 
 import './App.scss';
-import Projects from '../Views/Projects/Projects';
-import Contact from '../Views/Contact/Contact';
-import NotFound from '../Views/Error/NotFound';
-import About from '../Views/About/About';
 
 const CLASS = 'sv-App';
 
-function App() {
-  return (
-    <BrowserRouter>
+class App extends Component {
+  static propTypes = {
+    location: PropTypes.object,
+  };
+
+  static defaultProps = {
+    location: {},
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentLocation: '',
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    const { location } = this.props;
+    if (location.pathname !== prevProps.location.pathname) {
+      console.log('Route change!', location.pathname);
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({
+        currentLocation: location.pathname,
+      });
+    }
+  }
+
+  render() {
+    const { currentLocation } = this.state;
+    return (
       <div className={CLASS}>
         <MainMenu />
-        <Switch>
-          <Route path="/" component={Homepage} exact />
-          {/* <Route path="/home" component={Homepage} exact /> */}
-          <Route path="/about" component={About} exact />
-          <Route path="/projects" component={Projects} exact />
-          <Route path="/contact" component={Contact} exact />
-          <Route component={NotFound} />
-        </Switch>
+        <Main currentLocation={currentLocation} />
       </div>
-    </BrowserRouter>
-  );
+    );
+  }
 }
 
-export default App;
+export default withRouter(props => <App {...props} />);

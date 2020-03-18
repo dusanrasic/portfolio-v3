@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 import { PROJECT_NAV_TYPE } from '../../../Types/projects';
 
 import './Projects.scss';
@@ -6,12 +7,40 @@ import './Projects.scss';
 const CLASS = 'sv-Projects';
 
 export default class Projects extends Component {
+  static propTypes = {
+    location: PropTypes.object,
+  };
+
+  static defaultProps = {
+    location: {},
+  };
+
   constructor() {
     super();
     this.state = {
       activeProject: null,
       activeProjectTechnologies: false,
+      activeClass: '',
     };
+  }
+
+  componentDidMount() {
+    const { location } = this.props;
+    if (location.pathname === '/projects') {
+      requestAnimationFrame(() => {
+        this.setState({
+          activeClass: 'sv-Projects-Active',
+        });
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    requestAnimationFrame(() => {
+      this.setState({
+        activeClass: CLASS,
+      });
+    });
   }
 
   renderSiteMenu = () =>
@@ -83,7 +112,11 @@ export default class Projects extends Component {
   };
 
   render() {
-    const { activeProject, activeProjectTechnologies } = this.state;
+    const {
+      activeProject,
+      activeProjectTechnologies,
+      activeClass,
+    } = this.state;
     const activeTechnologyClass = activeProjectTechnologies
       ? `${CLASS}-wrapper-right-holder-switch-technology-active`
       : `${CLASS}-wrapper-right-holder-switch-technology`;
@@ -91,7 +124,7 @@ export default class Projects extends Component {
       ? `${CLASS}-wrapper-right-holder-switch-technology-active`
       : `${CLASS}-wrapper-right-holder-switch-technology`;
     return (
-      <div className={CLASS}>
+      <div className={activeClass}>
         <div className={`${CLASS}-wrapper`}>
           <div className={`${CLASS}-wrapper-left`}>
             <div className={`${CLASS}-wrapper-left-holder`}>

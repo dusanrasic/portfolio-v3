@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Input from './Input';
+import Button from './Button';
 
 import './Form.scss';
 
@@ -16,6 +17,7 @@ const Form = () => (
       placeholder='"John Doe wishes all the best!"'
       multi
     />
+    <Button label="Submit" />
   </div>
 );
 

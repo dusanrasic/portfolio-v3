@@ -18,21 +18,115 @@
 		min-height: 80vh;
 		height: 80vh;
 		position: relative;
-		// box-shadow: 0 0 0 100vh rgba($color: #000000, $alpha: 0.3);
-
+		animation: backgroundAnim 1s ease-in-out;
+		animation-delay: 3.5s;
+		animation-fill-mode: forwards;
+		
 		&-left {
 			display: flex;
 			width: calc(100vw / 2 - 15vw - 5vw);
 			height: 100%;
-			justify-content: flex-end;
-			align-items: center;
+			justify-content: center;
+			align-items: flex-end;
 			position: relative;
+			flex-direction: column;
+			padding: 2px;
+			// animation: backgroundAnim .5s linear;
+			animation-delay: 3.5s;
+			animation-fill-mode: forwards;
 
-			&-image {
-				height: 100%;
+			&-name,
+			&-position,
+			&-desc {
+				// color: $bright-navy-blue;
+				color: $baby-powder;
+				font-size: $font-size-bigger;
+				font-family: $font-Code-bold;
+			}
+			
+
+			// &-image {
+			// 	height: 100%;
+			// 	position: absolute;
+			// 	top: 0;
+			// 	animation: leftSideAnimation .5s linear;
+			// }
+			&-top,
+			&-left,
+			&-bottom{
 				position: absolute;
+			}
+
+			&-top{
 				top: 0;
-				animation: leftSideAnimation .5s linear;
+				right: 0;
+				height: 1px;
+				width: 0;
+				background-color: $baby-powder;
+				animation: topSide .5s linear;
+				animation-delay: .5s;
+				animation-fill-mode: forwards;
+
+				&:after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 4px;
+					height: 4px;
+					background-color: $bright-navy-blue;
+					animation: pseudoAnim .5s linear;
+					animation-delay: .5s;
+					animation-fill-mode: forwards;
+				}
+			}
+
+			&-left{
+				top: 0;
+				left: 0;
+				width: 1px;
+				background-color: $baby-powder;
+				animation: leftRightSide .5s linear;
+				animation-delay: 1s;
+				animation-fill-mode: forwards;
+
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 4px;
+					height: 4px;
+					opacity: 0;
+					background-color: $bright-navy-blue;
+					animation: pseudoAnim .5s linear;
+					animation-delay: 1s;
+					animation-fill-mode: forwards;
+				}
+			}
+
+			&-bottom{
+				bottom: 0;
+				left: 0;
+				height: 1px;
+				background-color: $baby-powder;
+				animation: bottomSide .5s linear;
+				animation-delay: 1.5s;
+				animation-fill-mode: forwards;
+
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 4px;
+					height: 4px;
+					opacity: 0;
+					background-color: $bright-navy-blue;
+					animation: pseudoAnim .5s linear;
+					animation-delay: 1.5s;
+					animation-fill-mode: forwards;
+				}
 			}
 		}
 
@@ -40,15 +134,106 @@
 			width: calc(100vw / 2 - 15vw + 5vw);
 			height: 100%;
 			display: flex;
-			justify-content: flex-start;
-			align-items: center;
+			justify-content: center;
+			align-items: flex-start;
+			flex-direction: column;
 			position: relative;
+			padding: 2px;
+			// animation: backgroundAnim .5s linear;
+			animation-delay: 3.5s;
+			animation-fill-mode: forwards;
 
-			&-image {
-				height: 100%;
+			&-name,
+			&-position,
+			&-desc {
+				color: $bright-navy-blue;
+				font-size: $font-size-bigger;
+				font-family: $font-Code-bold;
+			}
+
+			// &-image {
+			// 	height: 100%;
+			// 	position: absolute;
+			// 	bottom: 0;
+			// 	animation: rightSideAnimation .5s linear;
+			// }
+
+			&-top,
+			&-right,
+			&-bottom{
 				position: absolute;
+			}
+
+			&-top{
+				top: 0;
+				right: 0;
+				height: 1px;
+				animation: topSide .5s linear;
+				animation-delay: 3s;
+				animation-fill-mode: forwards;
+				background-color: $bright-navy-blue;
+				
+				&:after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 4px;
+					height: 4px;
+					opacity: 0;
+					background-color: $baby-powder;
+					animation: pseudoAnim .5s linear;
+					animation-delay: 3s;
+					animation-fill-mode: forwards;
+				}
+			}
+
+			&-right{
 				bottom: 0;
-				animation: rightSideAnimation .5s linear;
+				right: 0;
+				width: 1px;
+				animation: leftRightSide .5s linear;
+				animation-delay: 2.5s;
+				animation-fill-mode: forwards;
+				background-color: $bright-navy-blue;
+				
+				&:after {
+					content: '';
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 4px;
+					height: 4px;
+					opacity: 0;
+					background-color: $baby-powder;
+					animation: pseudoAnim .5s linear;
+					animation-delay: 2.5s;
+					animation-fill-mode: forwards;
+				}
+			}
+
+			&-bottom{
+				bottom: 0;
+				left: 0;
+				height: 1px;
+				animation: bottomSide .5s linear;
+				animation-delay: 2s;
+				animation-fill-mode: forwards;
+				background-color: $bright-navy-blue;
+				
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 4px;
+					height: 4px;
+					opacity: 0;
+					background-color: $baby-powder;
+					animation: pseudoAnim .5s linear;
+					animation-delay: 2s;
+					animation-fill-mode: forwards;
+				}
 			}
 		}
 	}
@@ -105,5 +290,97 @@
 	100% {
 		bottom: 0;
 		opacity: 1;
+	}
+}
+
+@keyframes topSide {
+	0% {
+		width: 0;
+		&:after{
+			opacity: 1;
+		}
+	}
+	25% {
+		width: 25%;
+	}
+	50% {
+		width: 50%;
+	}
+	75% {
+		width: 75%;
+	}
+	100% {
+		width: 100%;
+		background-color: transparent;
+	}
+}
+@keyframes leftRightSide {
+	0% {
+		height: 0;
+	}
+	25% {
+		height: 25%;
+	}
+	50% {
+		height: 50%;
+	}
+	75% {
+		height: 75%;
+	}
+	100% {
+		height: 100%;
+		background-color: transparent;
+	}
+}
+@keyframes bottomSide {
+	0% {
+		width: 0;
+	}
+	25% {
+		width: 25%;
+	}
+	50% {
+		width: 50%;
+	}
+	75% {
+		width: 75%;
+	}
+	100% {
+		width: 100%;
+		background-color: transparent;
+	}
+}
+
+@keyframes pseudoAnim {
+	0% {
+		opacity: 1;
+	}
+	25% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 1;
+	}
+	99%{
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes backgroundAnim {
+	0% {
+		// background-color: transparent;
+		box-shadow: 0 0 0 0;
+	}
+
+	100% {
+		// background-color: $baby-powder;
+		// background-color: $bright-navy-blue;
+		box-shadow: 0 0 0 100vh rgba($color: #000000, $alpha: 0.3);
 	}
 }

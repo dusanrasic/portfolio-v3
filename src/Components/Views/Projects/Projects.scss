@@ -1,5 +1,6 @@
 @import "../../../Styles/Default/variables";
 
+.sv-Projects-Active,
 .sv-Projects {
   min-width: 100vw;
   min-height: 100vh;
@@ -17,7 +18,8 @@
     width: 70vw;
     min-height: 80vh;
     height: 80vh;
-    box-shadow: 0 0 0 100vh rgba($color: #000000, $alpha: 0.3);
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 1s ease-in-out;
 
     &-left {
       width: calc(100vw / 2 - 15vw - 5vw);
@@ -49,12 +51,12 @@
             border: none;
             outline: none;
             text-align: left;
-            color: $light-gray;
+            color: $baby-powder;
 
             &:hover {
               cursor: pointer;
               color: $white;
-              border-bottom: 1px solid $pink;
+              border-bottom: 1px solid $bright-navy-blue;
             }
 
             &:active {
@@ -68,7 +70,7 @@
               border: none;
               outline: none;
               color: $white;
-              border-bottom: 1px solid $pink;
+              border-bottom: 1px solid $bright-navy-blue;
               text-align: left;
 
               &:hover {
@@ -91,10 +93,11 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      background-color: $baby-powder;
 
       >span {
         font-size: $font-size-big;
-        color: $pink;
+        color: $bright-navy-blue;
         font-weight: $font-weight-bold;
       }
 
@@ -127,11 +130,11 @@
             font-size: $font-size-big;
             outline: none;
             min-width: 250px;
-            color: $dark-gray;
+            color: $maastricht-blue;
 
             &:hover {
               cursor: pointer;
-              border-bottom: 1px solid $pink;
+              border-bottom: 1px solid $bright-navy-blue;
               // color: #96BDC6;
             }
 
@@ -141,8 +144,8 @@
               font-size: $font-size-big;
               outline: none;
               opacity: 1;
-              color: $dark-gray;
-              border-bottom: 1px solid $pink;
+              color: $maastricht-blue;
+              border-bottom: 1px solid $bright-navy-blue;
 
               &:hover {
                 cursor: pointer;
@@ -164,12 +167,12 @@
               width: 100%;
               font-size: $font-size-big;
               margin: 10px 0;
-              color: $pink;
+              color: $bright-navy-blue;
               font-weight: $font-weight-bold;
 
               >span {
                 font-size: $font-size-big;
-                color: $dark-gray;
+                color: $maastricht-blue;
               }
             }
 
@@ -177,18 +180,18 @@
               width: 100%;
               font-size: $font-size-big;
               margin: 10px 0;
-              color: $pink;
+              color: $bright-navy-blue;
               font-weight: $font-weight-bold;
 
               >a {
                 font-size: $font-size-big;
                 text-decoration: none;
-                color: $dark-gray;
+                color: $maastricht-blue;
 
                 &:hover {
                   text-decoration: underline;
                   color: $white;
-                  text-decoration-color: $pink;
+                  text-decoration-color: $bright-navy-blue;
                 }
               }
             }
@@ -206,11 +209,11 @@
               width: 100%;
               font-size: $font-size-big;
               margin: 10px 0;
-              color: $pink;
+              color: $bright-navy-blue;
 
               >span {
                 font-size: $font-size-big;
-                color: $dark-gray;
+                color: $maastricht-blue;
               }
             }
           }
@@ -218,4 +221,9 @@
       }
     }
   }
+}
+.sv-Projects-Active {
+	.sv-Projects-wrapper {
+	  box-shadow: 0 0 0 100vh rgba($color: #000000, $alpha: 0.3);
+	}
 }
